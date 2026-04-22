@@ -43,10 +43,17 @@
 # backReverse(1, 3)
 
 
-def sumOfNum(n):
-    if n==1:
-        return 1
-    return n + sumOfNum(n-1)
+# def sumOfNum(n):
+#     if n==1:
+#         return 1
+#     return n + sumOfNum(n-1)
     
 
-print(sumOfNum(10))
+# print(sumOfNum(10))
+
+def factorial(n):
+    if n==0 or n==1:
+        return 1
+    return n*factorial(n-1)
+
+print(factorial(4))
