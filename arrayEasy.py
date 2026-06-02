@@ -39,11 +39,38 @@
 
 #is array sorted
 
-arr=[1,4,6,45,2,78]
-for i in range(1, len(arr)):
-    if arr[i]<arr[i-1]:
-        print(False)
-        break
-else:
-    print(True)
+# arr=[1,4,6,45,2,78]
+# for i in range(1, len(arr)):
+#     if arr[i]<arr[i-1]:
+#         print(False)
+#         break
+# else:
+#     print(True)
     
+
+#Remove duplicate from a sorted array
+
+nums=[1,1,2]
+
+#Bbrute force
+uni=nums[0]
+count=1
+i=1
+while i<len(nums):
+    if nums[i]==uni:
+        nums.remove(nums[i])
+        i=i
+        print(nums)
+    else:
+        uni=nums[i]
+        count+=1
+        i+=1
+print(count, nums)
+
+#optimal
+i=0
+for j in range(1, len(nums)):
+    if nums[i]!=nums[j]:
+        i+=1
+        nums[i]=nums[j]
+print(i+1, nums)
