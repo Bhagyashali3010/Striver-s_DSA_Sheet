@@ -50,27 +50,48 @@
 
 #Remove duplicate from a sorted array
 
-nums=[1,1,2]
+# nums=[1,1,2]
 
-#Bbrute force
-uni=nums[0]
-count=1
-i=1
-while i<len(nums):
-    if nums[i]==uni:
-        nums.remove(nums[i])
-        i=i
-        print(nums)
-    else:
-        uni=nums[i]
-        count+=1
-        i+=1
-print(count, nums)
+# #Bbrute force
+# uni=nums[0]
+# count=1
+# i=1
+# while i<len(nums):
+#     if nums[i]==uni:
+#         nums.remove(nums[i])
+#         i=i
+#         print(nums)
+#     else:
+#         uni=nums[i]
+#         count+=1
+#         i+=1
+# print(count, nums)
 
-#optimal
-i=0
-for j in range(1, len(nums)):
-    if nums[i]!=nums[j]:
-        i+=1
-        nums[i]=nums[j]
-print(i+1, nums)
+# #optimal
+# i=0
+# for j in range(1, len(nums)):
+#     if nums[i]!=nums[j]:
+#         i+=1
+#         nums[i]=nums[j]
+# print(i+1, nums)
+
+
+#Rotate array by k
+
+nums=[1,2,3,4,5]
+k=3
+
+for i in range(k):
+    ele=nums.pop()
+    nums.insert(0,ele)
+    print(nums)
+
+#Left rotate by one
+
+t_arr=[]
+temp = nums[0]
+for i in range(1, len(nums)):
+    nums[i-1]=nums[i]
+
+nums[-1]=temp
+print(nums)
