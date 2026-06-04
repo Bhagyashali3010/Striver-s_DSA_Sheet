@@ -81,17 +81,30 @@
 nums=[1,2,3,4,5]
 k=3
 
-for i in range(k):
-    ele=nums.pop()
-    nums.insert(0,ele)
-    print(nums)
+# for i in range(k):
+#     ele=nums.pop()
+#     nums.insert(0,ele)
+# print(nums)
+
+
+#Optimal appraoch 
+
+k=k%len(nums)
+nums.reverse()
+print(nums)
+print(nums[:k])
+print(nums[k:])
+nums[:k]=reversed(nums[:k])
+print
+nums[k:]=reversed(nums[k:])
+print(nums)
 
 #Left rotate by one
 
 t_arr=[]
-temp = nums[0]
-for i in range(1, len(nums)):
-    nums[i-1]=nums[i]
+# temp = nums[0]
+# for i in range(1, len(nums)):
+#     nums[i-1]=nums[i]
 
-nums[-1]=temp
-print(nums)
+# nums[-1]=temp
+# print(nums)
