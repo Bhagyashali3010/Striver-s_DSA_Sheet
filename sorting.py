@@ -24,11 +24,24 @@
 
 #insertion sort
 
+# arr=[9,11,23,3,7,20]
+
+# for i in range(len(arr)):
+#     j=i
+#     while (j>0 and arr[j-1]>arr[j]):
+#             arr[j], arr[j-1]=arr[j-1], arr[j]
+#             j-=1
+#     print(arr)
+
+#Merge Sort
+
 arr=[9,11,23,3,7,20]
 
-for i in range(len(arr)):
-    j=i
-    while (j>0 and arr[j-1]>arr[j]):
-            arr[j], arr[j-1]=arr[j-1], arr[j]
-            j-=1
-    print(arr)
+def MergeSort(arr,low, high):
+    if low>=high:
+        return 
+    
+        mid=(low+high)//2
+        MergeSort(arr,low, mid)
+        MergeSort(arr, mid+1, high)
+        Merge(arr, low, mid, high)

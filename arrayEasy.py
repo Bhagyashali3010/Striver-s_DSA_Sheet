@@ -78,8 +78,8 @@
 
 #Rotate array by k
 
-nums=[1,2,3,4,5]
-k=3
+# nums=[1,2,3,4,5]
+# k=3
 
 # for i in range(k):
 #     ele=nums.pop()
@@ -89,22 +89,52 @@ k=3
 
 #Optimal appraoch 
 
-k=k%len(nums)
-nums.reverse()
-print(nums)
-print(nums[:k])
-print(nums[k:])
-nums[:k]=reversed(nums[:k])
-print
-nums[k:]=reversed(nums[k:])
-print(nums)
+# k=k%len(nums)
+# nums.reverse()
+# print(nums)
+# print(nums[:k])
+# print(nums[k:])
+# nums[:k]=reversed(nums[:k])
+# print
+# nums[k:]=reversed(nums[k:])
+# print(nums)
 
 #Left rotate by one
 
-t_arr=[]
+# t_arr=[]
 # temp = nums[0]
 # for i in range(1, len(nums)):
 #     nums[i-1]=nums[i]
 
 # nums[-1]=temp
 # print(nums)
+
+
+#Move zeros to the end
+nums=[0,4,6,0,6,0,0,8]
+
+#brute force:
+
+# c=0
+# i=0
+# while i<(len(nums)):
+#     if nums[i]==0:
+#         nums.remove(nums[i])
+#         c+=1
+#     else:
+#         i+=1
+# for j in range(c):
+#     nums.append(0)
+# print(nums)
+
+#optimal
+
+c=0
+for i in range(len(nums)):
+    if nums[i]!=0:
+        nums[c]=nums[i]
+        c+=1
+while c<len(nums):
+    nums[c]=0
+    c+=1
+print(nums)
