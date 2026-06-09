@@ -129,12 +129,43 @@ nums=[0,4,6,0,6,0,0,8]
 
 #optimal
 
-c=0
-for i in range(len(nums)):
-    if nums[i]!=0:
-        nums[c]=nums[i]
-        c+=1
-while c<len(nums):
-    nums[c]=0
-    c+=1
-print(nums)
+# c=0
+# for i in range(len(nums)):
+#     if nums[i]!=0:
+#         nums[c]=nums[i]
+#         c+=1
+# while c<len(nums):
+#     nums[c]=0
+#     c+=1
+# print(nums)
+
+
+#linear search
+
+# nums=[2,3,5,7,4,3]
+# target=3
+
+# for i in range(len(nums)):
+#     if nums[i]==target:
+#         print(i)
+#         break
+
+#Union of 2 sorted array
+
+nums1=[1,2,4,5]
+nums2=[2, 3, 5, 7]
+
+
+nums=[]
+i=0
+j=0
+l1=len(nums1)
+l2=len(nums2)
+while i<l1 or j<l2:
+    if nums1[i] not in nums:
+        nums.append(nums1[i])
+    i+=1
+    if nums2[j] not in nums:
+        nums.append(nums2[j])
+    j+=1
+    print(nums)
