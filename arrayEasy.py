@@ -152,20 +152,54 @@ nums=[0,4,6,0,6,0,0,8]
 
 #Union of 2 sorted array
 
-nums1=[1,2,4,5]
-nums2=[2, 3, 5, 7]
+# nums1=[1,2,4,5]
+# nums2=[2, 3, 5, 7]
 
 
-nums=[]
-i=0
-j=0
-l1=len(nums1)
-l2=len(nums2)
-while i<l1 or j<l2:
-    if nums1[i] not in nums:
-        nums.append(nums1[i])
-    i+=1
-    if nums2[j] not in nums:
-        nums.append(nums2[j])
-    j+=1
-    print(nums)
+# nums=[]
+# i=0
+# j=0
+# l1=len(nums1)
+# l2=len(nums2)
+# while i<l1 or j<l2:
+#     if nums1[i] not in nums:
+#         nums.append(nums1[i])
+    # i+=1
+    # if nums2[j] not in nums:
+    #     nums.append(nums2[j])
+    # j+=1
+    # print(nums)
+
+
+
+#Find missing element
+
+arr=[1,3,4,2,6]
+
+#brute force :
+
+# for i in range(1,len(arr)+2):
+#     if i not in arr:
+#         print(i)
+#         break
+
+
+#better approach: using hash map
+
+# hash=[0]*(len(arr)+2)
+
+# for i in range(len(arr)):
+#     hash[arr[i]]+=1
+   
+# for j in range(1, len(hash)):
+#     if hash[j]==0:
+#         print(j)
+
+
+#optimal - natural number addition formula
+
+n=len(arr)+1
+summ=(n*(n+1))/2
+
+s=sum(arr)
+print(int(summ-s))
