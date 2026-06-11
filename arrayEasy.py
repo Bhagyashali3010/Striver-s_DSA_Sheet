@@ -198,8 +198,42 @@ arr=[1,3,4,2,6]
 
 #optimal - natural number addition formula
 
-n=len(arr)+1
-summ=(n*(n+1))/2
+# n=len(arr)+1
+# summ=(n*(n+1))/2
 
-s=sum(arr)
-print(int(summ-s))
+# s=sum(arr)
+# print(int(summ-s))
+
+
+#Maximum consecutive once
+
+# arr=[1,0,1,0,1,0,1,0,1,1,1,1]
+
+# c=0
+# maxi=0
+# for i in range(len(arr)):
+#     if arr[i]==1:
+#         c+=1
+#         maxi=max(maxi,c)
+#     else:
+#         c=0
+# print(maxi)
+
+
+#Single number
+
+nums=[1,3,3,4,9,1,4]
+
+dict={}
+
+for i in range(len(nums)):
+    n=nums[i]
+    if n in dict:
+        dict[n]+=1
+    else:
+        dict[n]=1
+print(dict)
+
+for k in dict:
+    if dict[k]==1:
+        print(k)
