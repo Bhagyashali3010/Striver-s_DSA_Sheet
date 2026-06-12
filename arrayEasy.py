@@ -222,18 +222,72 @@ arr=[1,3,4,2,6]
 
 #Single number
 
-nums=[1,3,3,4,9,1,4]
+# nums=[1,3,3,4,9,1,4]
 
-dict={}
+# dict={}
 
-for i in range(len(nums)):
-    n=nums[i]
-    if n in dict:
-        dict[n]+=1
-    else:
-        dict[n]=1
-print(dict)
+# for i in range(len(nums)):
+#     n=nums[i]
+#     if n in dict:
+#         dict[n]+=1
+#     else:
+#         dict[n]=1
+# print(dict)
 
-for k in dict:
-    if dict[k]==1:
-        print(k)
+# for k in dict:
+#     if dict[k]==1:
+#         print(k)
+
+
+
+# Longest Subarray with given Sum K(Positives)
+
+nums = [10, 5, 2, 7, 1, 9]
+k = 15  
+
+# if sum(nums)==k:
+#     print(len(nums))
+# elif sum(nums)==0:
+#     print(0)
+
+# brute force
+
+# summ=0
+# c=0
+# maxi=0
+# i=0
+# while i<len(nums):
+#     summ+=nums[i]
+#     c+=1
+#     if summ==k:
+#         i=i
+#         maxi=max(maxi, c)
+#         c=0
+#         summ=0
+#     else:
+#         i+=1
+# print(maxi)
+
+# optimal
+
+# nums = [10, 5, 2, 7, 1, 9]
+# k = 15 
+
+# maxi=0
+# l=0
+# r=0
+# summ=nums[0]
+
+# while r<len(nums):
+#     while l<=r and summ>k:
+#         summ-=nums[l]
+#         l+=1
+#     if k==summ:
+#         maxi=max(maxi, r-l+1)
+#     r+=1
+#     if r<len(nums):
+#         summ+=nums[r]
+        
+# print(maxi)
+
+
