@@ -291,3 +291,24 @@ k = 15
 # print(maxi)
 
 
+# Length of the longest subarray with zero Sum
+
+arr=[9, -3, 3, -1, 6, -5, 7]
+
+if sum(arr)==0:
+    print(len(arr))
+
+dicti={}
+summ=0
+maxi=0
+for i in range(len(arr)):
+    summ+=arr[i]
+    if summ==0:
+        maxi =max(i+1, maxi)
+    
+    else:
+        if summ in dicti:
+            maxi=max(maxi, i-dicti[summ])
+        else:
+            dicti[summ]=i
+    print(maxi)
