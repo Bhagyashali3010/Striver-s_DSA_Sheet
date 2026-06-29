@@ -1,7 +1,7 @@
 # Two Sum : Check if a pair with given sum exists in Array
 
-nums = [3,2,4]
-target = 6
+# nums = [3,2,4]
+# target = 6
 # arr=[]
 # seen={}
 
@@ -26,16 +26,37 @@ target = 6
 # print(arr)
 
 
-arr=[]
-dicti={}
-for i in range(len(nums)):
-    if nums[i] not in dicti:
-        dicti[nums[i]]=i
-        print(dicti)
-    if (target-nums[i]) in dicti and i!=dicti[target-nums[i]]:
-        print(i,dicti[target-nums[i]] )
-        arr.append(dicti[target-nums[i]])
-        arr.append(i)
-        break
-print (arr)
+# arr=[]
+# dicti={}
+# for i in range(len(nums)):
+#     if nums[i] not in dicti:
+#         dicti[nums[i]]=i
+#         print(dicti)
+#     if (target-nums[i]) in dicti and i!=dicti[target-nums[i]]:
+#         print(i,dicti[target-nums[i]] )
+#         arr.append(dicti[target-nums[i]])
+#         arr.append(i)
+#         break
+# print (arr)
 
+
+#Sort the array containing (0's, 1's, and 2's)
+# Used the Dutch National Flag Alogorithm
+
+nums=[0,1,0,2,1,0,2,1]
+low=0
+mid=0
+high=len(nums)-1
+
+while mid<=high:
+    print(nums)
+    if nums[mid]==0:
+        nums[low], nums[mid]= nums[mid], nums[low]
+        low+=1
+        mid+=1
+    elif nums[mid]==1:
+        mid+=1
+    else:
+        nums[high], nums[mid]= nums[mid], nums[high]
+        high-=1
+print(nums)
