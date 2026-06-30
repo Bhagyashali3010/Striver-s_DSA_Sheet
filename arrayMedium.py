@@ -43,20 +43,54 @@
 #Sort the array containing (0's, 1's, and 2's)
 # Used the Dutch National Flag Alogorithm
 
-nums=[0,1,0,2,1,0,2,1]
-low=0
-mid=0
-high=len(nums)-1
+# nums=[0,1,0,2,1,0,2,1]
+# low=0
+# mid=0
+# high=len(nums)-1
 
-while mid<=high:
-    print(nums)
-    if nums[mid]==0:
-        nums[low], nums[mid]= nums[mid], nums[low]
-        low+=1
-        mid+=1
-    elif nums[mid]==1:
-        mid+=1
+# while mid<=high:
+#     print(nums)
+#     if nums[mid]==0:
+#         nums[low], nums[mid]= nums[mid], nums[low]
+#         low+=1
+#         mid+=1
+#     elif nums[mid]==1:
+#         mid+=1
+#     else:
+#         nums[high], nums[mid]= nums[mid], nums[high]
+#         high-=1
+# print(nums)
+
+#Majority element 
+
+nums = [7, 0,2,7, 0, 1, 7, 7, 2, 7, 7,7]
+#better
+# dicti={}
+# maxi=0
+# for i in range(len(nums)):
+#     if nums[i] not in dicti:
+#         dicti[nums[i]]=1
+#     else:
+#         dicti[nums[i]]+=1
+#         maxi=max(maxi, dicti[nums[i]])
+#         if maxi>=len(nums)/2:
+#             print(nums[i])
+
+#optimal
+#Moore's Voting Algo
+
+cnt=0
+ele=0
+for num in nums:
+    if cnt==0:
+        cnt+=1
+        ele=num
+
+    elif ele==num:
+        cnt+=1
     else:
-        nums[high], nums[mid]= nums[mid], nums[high]
-        high-=1
-print(nums)
+        cnt-=1
+ 
+if nums.count(ele)>len(nums)/2:
+    print(ele)
+
