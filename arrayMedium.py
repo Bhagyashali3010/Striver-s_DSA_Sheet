@@ -63,7 +63,7 @@
 
 #Majority element 
 
-nums = [7, 0,2,7, 0, 1, 7, 7, 2, 7, 7,7]
+# nums = [7, 0,2,7, 0, 1, 7, 7, 2, 7, 7,7]
 #better
 # dicti={}
 # maxi=0
@@ -79,18 +79,34 @@ nums = [7, 0,2,7, 0, 1, 7, 7, 2, 7, 7,7]
 #optimal
 #Moore's Voting Algo
 
-cnt=0
-ele=0
-for num in nums:
-    if cnt==0:
-        cnt+=1
-        ele=num
+# cnt=0
+# ele=0
+# for num in nums:
+#     if cnt==0:
+#         cnt+=1
+#         ele=num
 
-    elif ele==num:
-        cnt+=1
-    else:
-        cnt-=1
+#     elif ele==num:
+#         cnt+=1
+#     else:
+#         cnt-=1
  
-if nums.count(ele)>len(nums)/2:
-    print(ele)
+# if nums.count(ele)>len(nums)/2:
+#     print(ele)
 
+
+
+#Maximum Subarray Sum (Kadane's Algo)
+
+nums = [2, 3, 5, -2, 7, -4] 
+maxi=float('-inf')
+summ=0
+for i in range(len(nums)):
+    summ+=nums[i]
+
+    if summ>maxi:
+        maxi=summ
+
+    if summ<0:
+        summ=0
+print(maxi)
