@@ -98,15 +98,51 @@
 
 #Maximum Subarray Sum (Kadane's Algo)
 
-nums = [2, 3, 5, -2, 7, -4] 
-maxi=float('-inf')
-summ=0
-for i in range(len(nums)):
-    summ+=nums[i]
+# nums = [-1,2, 3, 5, -2, 7, -4]
+# maxi=float('-inf')
+# summ=0
+# start=nums[0]
+# for i in range(len(nums)):
+#     if summ==0:
+#         start=i
+#     summ+=nums[i]
+        
+#     if summ>maxi:
+#         maxi=summ
+#         end=i
 
-    if summ>maxi:
-        maxi=summ
+#     if summ<0:
+#         summ=0
+# print(maxi)
+# for i in range (start, end+1):
+#     print(nums[i])
 
-    if summ<0:
-        summ=0
-print(maxi)
+
+# Stock Buy And Sell
+
+prices = [1,2,4,2,5,7,2,4,9,0,9]
+# i=0
+# j=1
+# maxi=0
+# while j<len(prices):
+#     if prices[i]>=prices[j]:
+#         i=j
+#         j+=1
+#     else:
+#         profit=prices[j]-prices[i]
+#         maxi=max(maxi, profit)
+#         j+=1
+#     print(i, j, maxi)
+    
+
+# optimal approach
+
+mini=float('inf')
+profit=0
+
+for i in range(len(prices)):
+    if prices[i]<mini:
+        mini=prices[i]
+    else:
+        profit=prices[i]-mini
+    print(profit)
