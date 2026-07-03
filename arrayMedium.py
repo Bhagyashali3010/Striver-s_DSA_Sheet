@@ -120,7 +120,7 @@
 
 # Stock Buy And Sell
 
-prices = [1,2,4,2,5,7,2,4,9,0,9]
+# prices = [1,2,4,2,5,7,2,4,9,0,9]
 # i=0
 # j=1
 # maxi=0
@@ -137,12 +137,45 @@ prices = [1,2,4,2,5,7,2,4,9,0,9]
 
 # optimal approach
 
-mini=float('inf')
-profit=0
+# mini=float('inf')
+# profit=0
 
-for i in range(len(prices)):
-    if prices[i]<mini:
-        mini=prices[i]
+# for i in range(len(prices)):
+#     if prices[i]<mini:
+#         mini=prices[i]
+#     else:
+#         profit=prices[i]-mini
+#     print(profit)
+
+
+# Rearrange array elements by sign
+
+nums = [28,-41,22,-8,-37,46,35,-9,18,-6,19,-26,-37,-10,-9,15,14,31]
+# arr=[]
+# p=[]
+# n=[]
+
+# for num in nums:
+#     if num>0:
+#         p.append(num)
+#     else:
+#         n.append(num)
+# for i in range(len(n)):
+#     arr.append(p[i])
+#     arr.append(n[i])
+# print(arr)             
+
+    
+#optimal
+arr=[0]*len(nums)
+p=0
+n=1
+for num in nums:
+    if num>0:
+        arr[p]=num
+        p+=2
     else:
-        profit=prices[i]-mini
-    print(profit)
+        arr[n]=num
+        n+=2
+    print(arr)
+
