@@ -183,7 +183,7 @@
 
 #Next Permutation
 
-nums=[1]
+nums=[1,2,3]
 
 n=len(nums)
 for i in range(n-1, -1, -1):    
