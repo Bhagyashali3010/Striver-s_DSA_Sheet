@@ -150,7 +150,7 @@
 
 # Rearrange array elements by sign
 
-nums = [28,-41,22,-8,-37,46,35,-9,18,-6,19,-26,-37,-10,-9,15,14,31]
+# nums = [28,-41,22,-8,-37,46,35,-9,18,-6,19,-26,-37,-10,-9,15,14,31]
 # arr=[]
 # p=[]
 # n=[]
@@ -167,15 +167,36 @@ nums = [28,-41,22,-8,-37,46,35,-9,18,-6,19,-26,-37,-10,-9,15,14,31]
 
     
 #optimal
-arr=[0]*len(nums)
-p=0
-n=1
-for num in nums:
-    if num>0:
-        arr[p]=num
-        p+=2
-    else:
-        arr[n]=num
-        n+=2
-    print(arr)
+# arr=[0]*len(nums)
+# p=0
+# n=1
+# for num in nums:
+#     if num>0:
+#         arr[p]=num
+#         p+=2
+#     else:
+#         arr[n]=num
+#         n+=2
+#     print(arr)
 
+
+
+#Next Permutation
+
+nums=[1]
+
+n=len(nums)
+for i in range(n-1, -1, -1):    
+    if nums[i]>nums[i-1]:
+        idx=i-1
+        print(idx)
+        break
+if idx==-1:
+    print(nums[::-1])
+for i in range(n-1, idx, -1):
+    print(nums[i],nums[nums[idx]])
+    if nums[i]>nums[idx]:
+        nums[i], nums[idx]=nums[idx], nums[i]   
+        break
+nums[idx+1:]=(nums[:idx:-1])
+print(nums)
