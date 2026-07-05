@@ -183,20 +183,34 @@
 
 #Next Permutation
 
-nums=[1,2,3]
+# nums=[1,2,3]
 
-n=len(nums)
-for i in range(n-1, -1, -1):    
-    if nums[i]>nums[i-1]:
-        idx=i-1
-        print(idx)
-        break
-if idx==-1:
-    print(nums[::-1])
-for i in range(n-1, idx, -1):
-    print(nums[i],nums[nums[idx]])
-    if nums[i]>nums[idx]:
-        nums[i], nums[idx]=nums[idx], nums[i]   
-        break
-nums[idx+1:]=(nums[:idx:-1])
-print(nums)
+# n=len(nums)
+# for i in range(n-1, -1, -1):    
+#     if nums[i]>nums[i-1]:
+#         idx=i-1
+#         print(idx)
+#         break
+# if idx==-1:
+#     print(nums[::-1])
+# for i in range(n-1, idx, -1):
+#     print(nums[i],nums[nums[idx]])
+#     if nums[i]>nums[idx]:
+#         nums[i], nums[idx]=nums[idx], nums[i]   
+#         break
+# nums[idx+1:]=(nums[:idx:-1])
+# print(nums)
+
+
+#Leader elements of array
+
+nums = [-3, 4, 5, 1, -30, -10]
+arr=[]
+maxi=nums[-1]
+arr.append(nums[-1])
+for i in range(len(nums)-2, -1, -1):
+    if nums[i]>maxi:
+        arr.insert(0, nums[i])
+        maxi=nums[i]
+    print(arr)
+  
