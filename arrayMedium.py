@@ -204,13 +204,32 @@
 
 #Leader elements of array
 
-nums = [-3, 4, 5, 1, -30, -10]
-arr=[]
-maxi=nums[-1]
-arr.append(nums[-1])
-for i in range(len(nums)-2, -1, -1):
-    if nums[i]>maxi:
-        arr.insert(0, nums[i])
-        maxi=nums[i]
-    print(arr)
+# nums = [-3, 4, 5, 1, -30, -10]
+# arr=[]
+# maxi=nums[-1]
+# arr.append(nums[-1])
+# for i in range(len(nums)-2, -1, -1):
+#     if nums[i]>maxi:
+#         arr.insert(0, nums[i])
+#         maxi=nums[i]
+#     print(arr)
   
+
+# Longest Consecutive Sequence
+nums=[100,4,200,1,3,2]
+
+sett=set(nums)
+longest=1
+count=0
+if len(nums)==0:
+    print (0)
+for i in sett:           
+    if i-1 not in sett:
+        count=1
+        x=i
+        
+        while x+1 in sett:
+            x+=1
+            count+=1
+        longest=max(count, longest)
+print (longest)
